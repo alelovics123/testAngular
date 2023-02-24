@@ -1,0 +1,18 @@
+<div>
+  <div>
+    <form [formGroup]="searchForm">
+      <input id="stringSearch" [formControl]="" onkeydown="(function(e){
+  if (e.repeat)
+  {
+    let input = document.getElementById('stringSearch');
+    input.disabled = true;
+    setTimeout(function () { input.disabled = false; input.focus(); }, 1);
+  }
+})(arguments[0])" type="text" />
+      <input type="date" [formControl]="fromDateOfBirth" />
+      <input type="date" [formControl]="toDateOfBirth" />
+      <select [formControl]="recommenderId"><option value=""></option></select>
+    </form>
+    <mat-table [dataSource]="this.Users"></mat-table>
+  </div>
+</div>
